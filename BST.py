@@ -134,7 +134,6 @@ class BST:
 
 		# Case 3: Go right
 		elif parent.get_data() < data:
-			print("Parent < data")
 			if parent.get_right() is not None:
 				# Left child to be deleted
 				if parent.get_right().get_data() == data:
@@ -223,6 +222,7 @@ class BST:
 				return None
 
 	def preorder_traverse(self):
+		print("Traversing pre-order...")
 		self.pre_traverse(self.root)
 
 	def pre_traverse(self, parent):
@@ -235,6 +235,33 @@ class BST:
 		if parent.get_right() is not None:
 			self.pre_traverse(parent.get_right())
 
+	def inorder_traverse(self):
+		print("Traversing in order...")
+		self.in_traverse(self.root)
+
+	def in_traverse(self, parent):
+		# 1. Recurse through left branch
+		if parent.get_left() is not None:
+			self.in_traverse(parent.get_left())
+		# 2. Print current node
+		print(parent.get_data())
+		# 3. Recurse through right branch
+		if parent.get_right() is not None:
+			self.in_traverse(parent.get_right())
+
+	def postorder_traverse(self):
+		print("Traversing post order...")
+		self.post_traverse(self.root)
+
+	def post_traverse(self, parent):
+		# 1. Recurse through left branch
+		if parent.get_left() is not None:
+			self.post_traverse(parent.get_left())
+		# 2. Recurse through right branch
+		if parent.get_right() is not None:
+			self.post_traverse(parent.get_right())
+		# 3. Print current node
+		print(parent.get_data())
 
 
 
@@ -245,10 +272,12 @@ def main():
 	tree.insert(2)
 	#search_result = tree.search(5)
 	#search_result1 = tree.search(4)
-	tree.delete(2)
-	tree.delete(11)
+	#tree.delete(2)
+	#tree.delete(11)
 	print("Root:", tree.get_root().get_data())
 	tree.preorder_traverse()
+	tree.inorder_traverse()
+	tree.postorder_traverse()
 
 
 	# if search_result is not None:
