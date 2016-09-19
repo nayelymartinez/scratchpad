@@ -263,13 +263,32 @@ class BST:
 		# 3. Print current node
 		print(parent.get_data())
 
-
+	# Implement Depth first search using BSTs.
+	# DPS uses FILO using a stack.
+	# This is the iterative (non-recursive) version
+	def DPS(self, parent):
+		stack = Stack()
+		while stack.size() != 0:
+			if parent.get_left() is not None:
+				stack.push()
 
 def main():
 	tree = BST()
-	tree.insert(5)
-	tree.insert(10)
-	tree.insert(2)
+	tree.insert(50)
+	tree.insert(40)
+	tree.insert(60)
+	tree.insert(30)
+	tree.insert(45)
+	tree.insert(55)
+	tree.insert(70)
+	tree.insert(20)
+	tree.insert(35)
+	tree.insert(41)
+	tree.insert(53)
+	tree.insert(54)
+	tree.insert(58)
+	tree.insert(59)
+	tree.insert(80)
 	#search_result = tree.search(5)
 	#search_result1 = tree.search(4)
 	#tree.delete(2)
