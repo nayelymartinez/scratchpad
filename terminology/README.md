@@ -13,11 +13,12 @@ The remainder of this README document contains the terminology, along with its d
 ## Polymorphism
 
 There are three main types of polymorphism:
+
 1. Ad hoc polymorphism
 Functions with same name can denote different implementations depending on its signature.
 
 Python, as a dynamically typed language, does not generally require overloading functions, since you can pass in optional arguments.
 
-2. Subtyping
+1. Subtyping
 
-Polymorphic behavior allows you to specify common methods subclasses need on an abstract level, and then hand off to those subclasses to implement.
+Polymorphic behavior allows you to specify common methods that subclasses need on an abstract level, and then hand off to those subclasses to implement.
